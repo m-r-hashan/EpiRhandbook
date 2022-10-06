@@ -107,3 +107,8 @@ you have made now.
 
 You have to do it on regular occasion to keep updated on both side.
 
+Whenever any changes are made on the remote repository, pull must be done
+before pushing the local repository changes are sent to the remote repo.
+
+
+
