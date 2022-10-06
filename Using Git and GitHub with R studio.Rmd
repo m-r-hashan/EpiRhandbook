@@ -110,5 +110,24 @@ You have to do it on regular occasion to keep updated on both side.
 Whenever any changes are made on the remote repository, pull must be done
 before pushing the local repository changes are sent to the remote repo.
 
+Similarly whenever any changes are made on the local repository it needs 
+to be pushed as well before anyone tries to push something. Its kinda vice
+versa
+
+If you want to change the default branch of the local/remote repo to 
+another branch. Firstly, you've to check what is the name of your 
+default branch using 
+
+```{r}
+git_default_branch()
+
+# If your default branch is called master, switch to main using  and
+
+git_default_branch_rename()
+
+# Set up your system to use main as the default branch in the future using
+
+git_default_branch_configure()
+```
 
 
