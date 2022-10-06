@@ -1,0 +1,109 @@
+---
+title: "Using Git and GitHub with R"
+author: "Mohammad Rashidul Hashan"
+date: "2022-10-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install Git
+
+Before installing Git all the packages, R and R studio needs to be updated
+
+Download Git from the Google as per operating system
+
+# Check installation
+
+Put the following on the terminal of the R studio
+
+git --version
+
+The output should show Git version more than 2.3 
+
+## Configure Git
+
+install the following package
+
+```{r}
+install.packages("usethis")
+library(usethis)
+
+# Using the package configure Git, change the configuration for the git
+
+use_git_config(user.name  = "Mohammad Rashidul Hashan", 
+               user.email = "hasandmck66@gmail.com" )
+
+```
+
+
+## Create a local Git repository
+
+You can create a Git repository in the very beginning whenever a new project
+
+is build upon.
+
+However, there is another way to open if already an existing package 
+
+requires local Git repository
+
+```{r}
+library(usethis)
+use_git()
+
+```
+
+## Commit the first file
+
+After restoring the git window on the R studio pane, its time to commit the
+the files under project. Simply clicking the commit option on the Git pane
+will make those files.
+
+If anyone wants to check the committed file they can check out on the 
+history. YOu can also add messages for each of the commit you make in the 
+commit message window that appears after hitting commit button
+
+## Create GitHub account and token 
+
+To connect Git from R studio with GitHub account, you have to install a
+package. You have to create personal access token (PAT) for smooth 
+functioning of the affiliated GitHub account. Regular update with the
+project and corresponding GitHub account will happen. 
+
+```{r}
+library(usethis)
+
+create_github_token()
+
+install.packages("gitcreds")
+library(gitcreds)
+
+gitcreds_set()
+
+```
+
+## Connecting Git and GitHub 
+
+Push the local R studio project to the GitHub repository. 
+
+```{r}
+library(usethis)
+
+use_github()
+
+```
+
+Pull the GitHub repository to the local R studio project
+
+To do that just open a R studio project by pasting the link from the new
+GitHub repository that has been made on GitHub. 
+
+Now to push the committed changes from the local R studio project, just 
+click on the push option after committing the changes. It will 
+automatically update the GitHub repository with the local changes that 
+you have made now.
+
+You have to do it on regular occasion to keep updated on both side.
+
